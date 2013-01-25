@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+
+		<title>Automating FirefoxOS</title>
+
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<link rel="stylesheet" href="Automating%20FirefoxOS_files/reveal.css">
+		<link rel="stylesheet" href="Automating%20FirefoxOS_files/mine.css" id="theme">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script><link rel="stylesheet" href="Automating%20FirefoxOS_files/paper.css" type="text/css" media="print">
+
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section class="present" style="display: block;">
+					<h1>Testing Firefox OS apps</h1>
+					<h3>Marionette</h3>
+					<p>
+						<small>- By Bebe</small>
+					</p>
+				</section>
+
+				<section class="future" style="display: block;">
+					<h2>What do we have?</h2>
+          <br>
+					<p class="fragment">Browser-driven phone <br> <br>
+					All apps (dialer, camera, etc.) are HTML5 &amp; JS<br><br>
+        </section>
+
+				<section class="future" style="display: block;">
+					<h2>What do we need?</h2>
+          <br>
+					<p class="fragment">Supports the existing frameworks</p>
+					<p class="fragment">Supports the future frameworks</p>
+					<p class="fragment">Has full control of the device</p><p>
+					</p><p class="fragment">Easy to use</p><p>
+				</section>
+
+				<section class="future" style="display: none;">
+					<h2>SOLUTION</h2>
+					<p>
+						WebDriver!
+					</p>
+          <br>
+					<p class="fragment">Works in content and privilaged space</p><p>
+					</p><p class="fragment">Provides the framework for future development</p><p>
+					</p><p class="fragment">Familiar to testers</p>
+  </section>
+
+
+
+                <section class="future" style="display: block;">
+                    <h2>How can we use it?</h2>
+                    <br>
+                    <ul>
+                        <li class="fragment visible"><b>Drive user actions</b>, in chrome or content</li>
+                        <li class="fragment visible">Remotely <b>execute any JS</b> in chrome or content</li>
+                        <li class="fragment visible"><b>Coordinate actions</b> across multiple devices </li>
+                    </ul>
+                    <br>
+                    <br>
+                    <p>
+                    </p>
+                </section>
+
+                <section class="future" style="display: block;">
+                    <h2>How does it work?</h2>
+                    <br>
+                    <p class="fragment"><h2>SERVER</h2></p>
+                    <br>
+                    <p class="fragment">Server starts within Gecko</p>
+                    <br>
+                    <p class="fragment">Check pref on Gecko startup</p>
+                    <br>
+                    <p class="fragment">Listens on port for client commands</p>
+                    <br>
+                    <p class="fragment">Server uses the MessageManager to talk to chrome/content.</p>
+                </section>
+
+                <section class="future" style="display: block;">
+                    <h2>How does it work?</h2>
+                    <br>
+                    <p class="fragment"><h2>CLIENT</h2></p>
+                    <br>
+                    <p class="fragment">Marionette is based on the <b>WebDriver</b> protocol</p>
+                    <br>
+                    <p class="fragment">Can run <b>selenium tests</b> by using selenium proxy!</p>
+                    <br>
+                    <p class="fragment">Server/Client communicate using WebDriver-based <b>JSON packets</b></p>
+                    <br>
+                    <p class="fragment">We officially support a Python based client and test runner</p>
+                </section>
+
+                <section class="future" style="display: block;">
+                    <h2>How can you use it?</h2>
+                    <p>
+                    </p><p class="fragment">B2G Emulator (qemu), B2G Desktop, and device testing (unagi, panda, desktop)</p>
+                    <br>
+                    <ul>
+                        <br>
+                        <li class="fragment">Test webAPIs like SMS/Call functions</li>
+                        <li class="fragment">Drive mochitests/reftests/etc on B2G</li>
+                        <li class="fragment">Running gaia smoketest automation</li>
+                        <li class="fragment">Maybe your next test!</li>
+                    </ul>
+                    <p>
+                        <br>
+                        <br>
+                    </p><p class="fragment">Drive Firefox desktop</p>
+                    <br>
+                    <ul>
+                        <br>
+                        <li class="fragment">Run test that access content and chrome at the same time</li>
+                    </ul>
+                    <p></p>
+                </section>
+
+                <section class="future" style="display: block;">
+                    <h2>How much work is involved?</h2>
+                    <br>
+                    <p class="fragment">It's easy you just need <b>imagination</b></p>
+                    <br>
+                    <p class="fragment"> <b>Demo</b></p>
+                </section>
+
+                <section class="future" style="display: block;">
+					<h2>Questions?</h2>
+          <br>
+          <p>More info - <a class="roll" href="https://developer.mozilla.org/en/Marionette"><span data-title="Marionette">Marionette</span></a></p>
+          <p>More info - <a class="roll" href="https://developer.mozilla.org/en-US/docs/Mozilla/Boot_to_Gecko/Firefox_OS_build_prerequisites"><span data-title="Build your own FirefoxOS (aka B2G) emulator or phone image!">Build your own FirefoxOS (aka B2G) emulator or phone image!</span></a></p>
+          <p>Use a proxy - <a class="roll" href="https://github.com/automatedtester/Selenium-Proxy"><span data-title="Selenium proxy to talk to Marionette (under development)">Selenium proxy to talk to Marionette (under development)</span></a></p>
+         <p><small>FYI, if you just want to play around, I recommend pulling down <a class="roll" href="ftp://ftp.mozilla.org/pub/b2g/"><span data-title="Desktop FirefoxOS">Desktop FirefoxOS</span></a>. It has marionette built-in, and emulates the phone resolution/environment on your desktop!
+				</small></p></section><small>
+
+			</small></div><small>
+
+		</small><div style="display: block;" class="progress"><span style="width: 0px;"></span></div><aside style="display: block;" class="controls"><div class="left"></div><div class="right enabled"></div><div class="up"></div><div class="down"></div></aside><div class="state-background"></div><div class="pause-overlay"></div></div><small>
+
+		<script src="Automating%20FirefoxOS_files/head.js"></script>
+		<script src="Automating%20FirefoxOS_files/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	
+
+</small><script src="Automating%20FirefoxOS_files/highlight.html" type="text/javascript"></script><script src="Automating%20FirefoxOS_files/zoom.html" type="text/javascript"></script><script src="Automating%20FirefoxOS_files/notes.html" type="text/javascript"></script></body></html>

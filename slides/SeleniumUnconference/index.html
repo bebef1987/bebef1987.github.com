@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html lang="en-US" class="fade">
+<!--
+  ^ You can control a few things with the <html> element's classes:
+
+  "fade"      - smooth fade between slides
+  "nonumbers" - remove the slide numbering after the progress bar
+-->
+
+<head>
+    <title>Selenium UnConference</title>
+    <!--
+      ^ Don't forget a good title - they show up as bookmarks and in Google
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1274, user-scalable=no">
+    <link rel="stylesheet" href="themes/mozilla/styles/style.css">
+    <style type="text/css">
+            /* Add your own styles here */
+    </style>
+</head>
+<body class="list">
+
+<header class="caption">
+    <h1>Mozilla WebQA</h1>
+    <p class="footer">Florin Strugariu, <a href="http://twitter.com/bebef_1987">@bebef_1876</a> or <a href="mailto:florin.strugariu@mozilla.ro">florin.strugariu@mozilla.ro</a></p>
+</header>
+
+<!--
+  The following is a slide, it needs a class of "slide" and it doesn't
+  hurt to keep the right semantic elements in there, too.
+  IMPORTANT: each slide needs its own unique ID - this will become its
+  URL and this is how this slide system works!
+-->
+
+<div id="cover" class="slide"><div>
+    <section>
+        <header>
+            <h2>Selenium UnConference</h2>
+        </header>
+        <div style="text-align: center;"><img width="200" src="pictures/webqa-logo.png"></div>
+        <small class="byline">
+            Florin Strugariu, Mozilla, Selenium UnConference, ClujHub, 06-04-2013
+        </small>
+        <footer class="notes">
+        </footer>
+    </section>
+</div></div>
+
+<div id="who-are-we" class="slide cover h"><div>
+    <section>
+        <header style="text-align: center">
+            <h2>Who are we?</h2>
+        </header>
+        <img src="pictures/qa-approval.png"
+             alt="Automation team">
+        <footer class="notes">
+        </footer>
+    </section>
+</div></div>
+<div id="team" class="slide cover w"><div>
+    <section>
+        <header>
+            <h2>Team of highly trained engineer's</h2>
+        </header>
+        <img src="pictures/webqa-us.jpg"
+             alt="Automation team">
+        <footer class="notes">
+        </footer>
+    </section>
+</div></div>
+<div id="testers" class="slide cover w"><div>
+    <section>
+        <header>
+            <h2>Testers and Developers collaborating</h2>
+        </header>
+        <img src="pictures/webqa-us.jpg"
+             alt="Automation team">
+        <footer class="notes">
+        </footer>
+    </section>
+</div></div>
+
+<div id="contributors" class="slide cover w"><div>
+    <section>
+        <header>
+            <h2>A group of contributor's that work with passion 24/7</h2>
+        </header>
+        <img src="pictures/mustache.jpg"
+             alt="Automation team">
+        <footer class="notes">
+        </footer>
+    </section>
+</div></div>
+
+<div id="friends" class="slide cover w"><div>
+    <section>
+        <header>
+            <h2>Friends that work together</h2>
+        </header>
+        <img src="pictures/mustache.jpg"
+             alt="Automation team">
+        <footer class="notes">
+        </footer>
+    </section>
+</div></div>
+
+<div id="what-do-we-do" class="slide"><div>
+    <section>
+        <header>
+            <h2>What do we do?</h2>
+        </header>
+        <ul>
+            <li>Ensure high quality of Mozilla web applications</li>
+            <li>We test aprox 15 sites daily</li>
+            <li>Run manual tests using Moztrap for all the sites
+                <ul><li>https://moztrap.mozilla.org/</li></ul>
+            </li>
+            <li>Write automated tests for all the sites
+                <ul><li>We use Selenium and Python</li></ul>
+            </li>
+
+            <li>Security testing</li>
+            <li>Performance testing</li>
+        </ul>
+        <footer class="notes">
+        </footer>
+    </section>
+</div></div>
+
+<div id="how-do-we-automate" class="slide shout"><div>
+    <section>
+        <header>
+            <h2>How do we automate?</h2>
+        </header>
+        <footer class="notes">
+        </footer>
+    </section>
+</div></div>
+
+<div id="style-guide" class="slide"><div>
+    <section>
+        <header>
+            <h2>Style Guide?</h2>
+        </header>
+        <pre>
+        <code class="comment"># Good</code>
+        <code>def click_login(self)</code>
+        <code>  self.selenium.find_element(*self._login_locator).click()</code>
+        <code></code>
+        <code class="comment"># Bad</code>
+        <code>def click_login(self)</code>
+        <code>  if not self.is_user_logged_in:</code>
+        <code>    self.selenium.find_element(*self._login_locator).click()</code>
+        <code>  else:</code>
+        <code>    pass</code>
+            </pre>
+        <footer class="notes">
+        </footer>
+    </section>
+</div></div>
+
+<div id="plugin" class="slide"><div>
+    <section>
+        <header>
+            <h2>Custom Plugin</h2>
+        </header>
+        <ul>
+            <li>pytest-mozwebqa</li>
+            <ul>
+                <li>pip installable</li>
+                <li>multiple command line options</li>
+                <li>config file</li>
+                <li>Selenium RC and WebDriver</li>
+                <li>Sauce Labs integration</li>
+                <li>credentials files</li>
+                <li>protect sensitive sites</li>
+                <li>generates HTML report</li>
+                <li><a href="https://github.com/davehunt/pytest-mozwebqa/">https://github.com/davehunt/pytest-mozwebqa/</a> </li>
+            </ul>
+        </ul>
+        <footer class="notes">
+        </footer>
+    </section>
+</div></div>
+
+<div id="grid" class="slide"><div>
+    <section>
+        <header>
+            <h2>Selenium Grid</h2>
+        </header>
+        <ul class="inner">
+            <li class="active">Latest Selenium grid</li>
+            <li>7 Mac Minis</li>
+            <li>6 Windows VM's</li>
+            <li>Mobile Tests on SauceLabs</li>
+            <li>Latest Firefox and IE</li>
+            <li>Ant configuration
+                <br><a href="https://github.com/mozilla/moz-grid-config">https://github.com/mozilla/moz-grid-config</a></li>
+        </ul>
+        <footer class="notes">
+        </footer>
+    </section>
+</div></div>
+
+<div id="jenkins" class="slide h w "><div>
+    <section>
+        <header>
+            <h2>Jenkins</h2>
+        </header>
+        <img alt="Jenkins" src="pictures/jenkins.png">
+        <footer class="notes">
+        </footer>
+    </section>
+</div></div>
+
+<div id="find-us" class="slide"><div>
+    <section>
+        <header>
+            <h2>Talk to us!</h2>
+        </header>
+        <ul>
+            <li>IRC: <a href="http://widget.mibbit.com/?settings=1b10107157e79b08f2bf99a11f521973&amp;server=irc.mozilla.org&amp;channel=%23mozwebqa">#mozwebqa on irc.mozilla.org</a></li>
+            <li>Email: <a href="mailto:mozwebqa@mozilla.org">mozwebqa@mozilla.org</a></li>
+            <li>Team Wiki: <a href="https://wiki.mozilla.org/QA/Execution/Web_Testing">https://wiki.mozilla.org/QA/Execution/Web_Testing</a></li>
+            <li>Mailing list: <a href="https://mail.mozilla.org/listinfo/mozwebqa">mozwebqa</a></li>
+            <li>Contributor Corner: <a href="https://wiki.mozilla.org/QA/Execution/Web_Testing/Contributor_Corner">Our list of fantastic team contributors</a></li>
+        </ul>
+        <footer class="notes">
+        </footer>
+    </section>
+</div></div>
+
+
+
+<div id="thanks" class="slide"><div>
+    <section>
+        <header>
+            <h2>Thanks</h2>
+        </header>
+        <figure class="frame middle swing">
+            <img src="pictures/mozillaoverview/redpanda.jpg"
+                 alt="Red panda (Firefox)">
+        </figure>
+        <ul class="oneline demourl">
+            <li>Florin Strugariu</li>
+            <li><a href="http://twitter.com/bebef_1987">bebef_1987</a></li>
+            <li><br><a href="http://bebef1987.github.com/slides/SeleniumUnconference/index.html">
+                http://bebef1987.github.com/slides/SeleniumUnconference/index.html
+            </a></li>
+        </ul>
+        <small class="credits">
+            <a href="http://www.flickr.com/photos/yortw/5798336827/">
+                Photo by Yortw
+            </a>
+        </small>
+        <footer class="notes">
+        </footer>
+    </section>
+</div></div>
+
+<div class="progress"><div></div></div>
+<!--
+  ^ don't like a progress bar? just delete this DIV
+-->
+<script src="scripts/script.js"></script>
+<!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+</body>
+</html>
